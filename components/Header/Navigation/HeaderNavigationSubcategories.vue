@@ -183,7 +183,6 @@ export default defineComponent({
     position: absolute;
     z-index: 10;
     background-color: #fff;
-    box-shadow: 0 3px var(--c-primary);
     left: 0;
     padding: 30px;
     right: 0;
@@ -210,20 +209,6 @@ export default defineComponent({
     }
     &.h5 {
       font-size: var(--h5-font-size)
-    }
-  }
-
-  .sf-link {
-    text-decoration: none;
-    &:hover {
-      text-decoration: underline;
-    }
-  }
-
-  &__link2 {
-    &:hover {
-      color: var(--c-primary);
-
     }
   }
 }

@@ -3,7 +3,7 @@
     class="header-navigation"
     @mouseleave="setCurrentCategory(null)"
   >
-    <div class="sf-header-navigation-item__item sf-header-navigation-item__item--desktop">
+    <div class="sf-header-navigation-item__item sf-header-navigation-item__item--desktop:focus">
       <HeaderNavigationItem
         v-for="(category, index) in categoryTree"
         :key="index"
@@ -19,7 +19,6 @@
         @mouseenter.native.prevent="onMouseEnter(category)"
         @keydown.down.native.prevent="setCurrentCategory(category)"
         @keydown.up.native.prevent="setCurrentCategory(null)"
-        @keyup.tab.native.prevent="setFocus($event)"
         @keydown.right.native.prevent="navRight()"
         @keydown.left.native.prevent="navLeft()"
       />
@@ -129,10 +128,13 @@ export default defineComponent({
   }
 }
 .nav-item {
-  --header-navigation-item-margin: 0 var(--spacer-sm);
+  --header-navigation-item-margin: 2 var(--spacer-sm);
 
   .sf-header-navigation-item__item--mobile {
     display: none;
   }
+  .sf-header-navigation-item__item--desktop:focus{
+  --header-navigation-item-border-color:gray !important
+}
 }
 </style>

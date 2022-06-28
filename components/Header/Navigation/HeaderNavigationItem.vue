@@ -8,7 +8,7 @@
       v-if="hasChildren"
       icon="chevron_down"
       size="xxs"
-      color="green-primary"
+      color="gray-primary"
       viewBox="0 0 24 24"
       :coverage="1"
     />
@@ -45,7 +45,10 @@ export default defineComponent({
   display: flex;
   .sf-icon {
     display: inline-flex;
-    margin: 0 var(--spacer-xs);
+    margin: 2 var(--spacer-xs);
   }
+}
+.sf-header-navigation-item__item--desktop:focus{
+  --header-navigation-item-border-color:gray !important
 }
 </style>

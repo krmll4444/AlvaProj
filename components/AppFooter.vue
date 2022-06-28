@@ -1,6 +1,6 @@
 <template>
   <SfFooter
-    :column="4"
+    :column="3"
     multiple
     class="footer"
   >
@@ -8,18 +8,6 @@
       <SfList>
         <SfListItem
           v-for="item in aboutUs"
-          :key="item"
-        >
-          <SfMenuItem
-            :label="$t(item)"
-          />
-        </SfListItem>
-      </SfList>
-    </SfFooterColumn>
-    <SfFooterColumn :title="$t('Departments')">
-      <SfList>
-        <SfListItem
-          v-for="item in departments"
           :key="item"
         >
           <SfMenuItem
@@ -52,19 +40,6 @@
         </SfListItem>
       </SfList>
     </SfFooterColumn>
-    <SfFooterColumn title="Social">
-      <div class="footer__socials">
-        <SfImage
-          v-for="item in social"
-          :key="item"
-          class="footer__social-image"
-          :src="addBasePath('/icons/'+item+'.svg')"
-          :alt="item"
-          width="32"
-          height="32"
-        />
-      </div>
-    </SfFooterColumn>
   </SfFooter>
 </template>
 
@@ -90,10 +65,9 @@ export default defineComponent({
   data() {
     return {
       aboutUs: ['Who we are', 'Quality in the details', 'Customer Reviews'],
-      departments: ['Women fashion', 'Men fashion', 'Kidswear', 'Home'],
       help: ['Customer service', 'Size guide', 'Contact us'],
       paymentsDelivery: ['Purchase terms', 'Guarantee'],
-      social: ['facebook', 'pinterest', 'google', 'twitter', 'youtube'],
+
       isMobile: false,
       desktopMin: 1024,
     };
@@ -127,7 +101,6 @@ export default defineComponent({
 }
 .sf-footer {
   @include for-desktop {
-    border-top: var(--spacer-xs) solid var(--c-primary);
     padding-bottom: 0;
     margin-top: var(--spacer-2xl);
   }
