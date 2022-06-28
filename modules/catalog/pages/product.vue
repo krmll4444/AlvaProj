@@ -1,5 +1,6 @@
 <template>
   <div id="product">
+    
     <div>
       <SfBreadcrumbs
         class="breadcrumbs desktop-only"
@@ -20,10 +21,12 @@
       </LoadWhenVisible>
     </div>
     <LoadWhenVisible>
-      <InstagramFeed />
-    </LoadWhenVisible>
-    <LoadWhenVisible>
-      <MobileStoreBanner />
+      <NewProducts
+        class="products"
+        :button-text="$t('See more')"
+        :title="$t('New Products')"
+        link="/c/women.html"
+      />
     </LoadWhenVisible>
   </div>
 </template>
@@ -56,6 +59,7 @@ export default defineComponent({
     MobileStoreBanner: () => import('~/components/MobileStoreBanner.vue'),
     RelatedProducts: () => import('~/modules/catalog/product/components/RelatedProducts.vue'),
     UpsellProducts: () => import('~/modules/catalog/product/components/UpsellProducts.vue'),
+    NewProducts: () => import(/* webpackPrefetch: true */ '~/components/NewProducts.vue'),
     LoadWhenVisible,
     SfBreadcrumbs,
     SfLoader,
