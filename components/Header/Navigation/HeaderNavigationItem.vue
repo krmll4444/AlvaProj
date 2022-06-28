@@ -48,4 +48,7 @@ export default defineComponent({
     margin: 2 var(--spacer-xs);
   }
 }
+.sf-header-navigation-item__item--desktop:focus{
+  --header-navigation-item-border-color:gray !important
+}
 </style>
