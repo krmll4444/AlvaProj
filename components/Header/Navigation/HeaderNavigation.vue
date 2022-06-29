@@ -129,7 +129,7 @@ export default defineComponent({
 }
 .nav-item {
   --header-navigation-item-margin: 2 var(--spacer-sm);
-
+   margin-right: var(--spacer-base);
   .sf-header-navigation-item__item--mobile {
     display: none;
   }

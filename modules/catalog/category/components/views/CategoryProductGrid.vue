@@ -100,7 +100,12 @@ export default defineComponent({
     --product-card-title-font-weight: var(--font-weight--normal);
     --product-card-add-button-bottom: var(--spacer-base);
     --product-card-title-margin: var(--spacer-sm) 0 0 0;
+    max-width: 25%;
   }
 }
 
+.sf-circle-icon{
+  --button-background: gray !important;
+  --button-box-shadow: 0 0 0 0.3125rem gray !important;
+}
 </style>
