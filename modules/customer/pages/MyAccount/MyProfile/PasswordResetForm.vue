@@ -53,7 +53,7 @@
         </ValidationProvider>
       </div>
       <SfButton
-        class="form__button"
+        class="form__button color-light"
         type="submit"
       >
         {{ $t('Update password') }}

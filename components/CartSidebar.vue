@@ -236,7 +236,7 @@
                 />
               </template>
             </SfProperty>
-            <CouponCode />
+        
             <a @click="goToCheckout">
               <SfButton
                 v-e2e="'go-to-checkout-btn'"
@@ -249,7 +249,7 @@
           </div>
           <div v-else>
             <SfButton
-              class="sf-button--full-width color-primary"
+              class="sf-button--full-width color-light"
               @click="toggleCartSidebar"
             >
               {{ $t('Go back shopping') }}
@@ -489,7 +489,7 @@ export default defineComponent({
 .empty-cart {
   --heading-description-margin: 0 0 var(--spacer-xl) 0;
   --heading-title-margin: 0 0 var(--spacer-xl) 0;
-  --heading-title-color: var(--c-primary);
+  --heading-title-color: gray;
   --heading-title-font-weight: var(--font-weight--semibold);
   display: flex;
   flex: 1;
