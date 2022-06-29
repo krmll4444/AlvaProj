@@ -114,7 +114,7 @@
           class="before-results"
         >
           <SvgImage
-            icon="error_image"
+            icon="search"
             :label="$t('Error')"
             width="412"
             height="412"
