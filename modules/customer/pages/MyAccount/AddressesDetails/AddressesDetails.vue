@@ -62,7 +62,7 @@
               </div>
             </div>
             <div class="addresses__actions">
-              <SfButton @click="goToEditAddressPage(address.id)">
+              <SfButton @click="goToEditAddressPage(address.id)" class="color-light">
                 {{ $t('Change') }}
               </SfButton>
 
@@ -86,7 +86,11 @@
           </div>
         </transition-group>
         <SfButton
+<<<<<<< HEAD
+          class="action-button color-light"
+=======
           class="action-button color-secondary"
+>>>>>>> ff9cbd367d2eba5c7852f771179dcdc8f9d8c55b
           @click="goToCreateAddressPage()"
         >
           {{ $t('Add new address') }}

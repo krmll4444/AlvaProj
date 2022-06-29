@@ -116,7 +116,7 @@
       </SfLoader>
       <template #content-bottom>
         <SfButton
-          class="sf-button--full-width color-secondary"
+          class="sf-button--full-width color-light"
           @click="toggleWishlistSidebar"
         >
           {{ $t('Start shopping') }}
@@ -281,7 +281,7 @@ export default defineComponent({
   &__total-items {
     font: var(--font-weight--normal) var(--font-size--lg) / 1.6
       var(--font-family--secondary);
-    color: var(--c-link);
+    color: gray;
     margin: 0;
   }
   &__total-price {
@@ -291,7 +291,7 @@ export default defineComponent({
     &-label {
       font: var(--font-weight--normal) var(--font-size--2xl) / 1.6
         var(--font-family--secondary);
-      color: var(--c-link);
+      color: gray;
     }
   }
 }

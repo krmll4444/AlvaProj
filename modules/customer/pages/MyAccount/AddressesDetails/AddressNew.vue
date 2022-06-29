@@ -6,7 +6,7 @@
           v-t="'Contact details updated'"
           class="message"
         />
-        <AddressForm @submit="createAddress">
+        <AddressForm @submit="createAddress" >
           <template #submit-button-content>
             {{ $t('Add the address') }}
           </template>

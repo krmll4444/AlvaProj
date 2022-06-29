@@ -190,7 +190,7 @@
         :disabled="loading"
       />
       <SfButton
-        class="form__button"
+        class="form__button color-light"
         type="submit"
         :disabled="loading"
       >

@@ -56,14 +56,14 @@
             </a>
           </div>
           <SfButton
-            class="sf-button--text"
+            class="sf-button--text color-light"
             @click="setActiveTab(TabsConfig.reviews.ID)"
           >
             {{ $t('Read all reviews') }}
           </SfButton>
           |
           <SfButton
-            class="sf-button--text"
+            class="sf-button--text color-light"
             @click="openNewReviewTab"
           >
             Add a review
@@ -84,7 +84,7 @@
           class="product__add-to-cart"
           @click="addItem({ product, quantity: parseInt(qty) })"
         />
-        <div class="product__additional-actions">
+        <div class="product__additional-actions color-light">
           <AddToWishlist
             :is-in-wishlist="isInWishlist"
             :is-show="isAuthenticated"

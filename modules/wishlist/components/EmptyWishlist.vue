@@ -15,6 +15,7 @@
           :description="$t('Looks like you haven’t added any items to the Wishlist.')"
           class="empty-wishlist__label"
           data-testid="label"
+          
         />
       </div>
     </slot>
@@ -59,7 +60,7 @@ export default defineComponent({
   &__label {
     --heading-description-margin: 0 0 var(--spacer-xl) 0;
     --heading-title-margin: 0 0 var(--spacer-xl) 0;
-    --heading-title-color: var(--c-primary);
+    --heading-title-color: gray;
     --heading-title-font-weight: var(--font-weight--semibold);
     text-align: center;
 
