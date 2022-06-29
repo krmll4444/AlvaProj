@@ -8,60 +8,21 @@
       :link="hero.link"
       :image-src="hero.imageSrc"
       :image-width="hero.imageWidth"
+      image="/assets/img1.webp"
       :image-height="hero.imageHeight"
       :nuxt-img-config="hero.imageConfig"
       image-tag="nuxt-img"
     />
-    <LazyHydrate when-visible>
-      <SfBannerGrid
-        :banner-grid="1"
-        class="banner-grid"
-      >
-        <template
-          v-for="item in banners"
-          #[item.slot]
-        >
-          <SfBanner
-            :key="item.slot"
-            :title="item.title"
-            :subtitle="item.subtitle"
-            :description="item.description"
-            :button-text="item.buttonText"
-            image-tag="nuxt-img"
-            :image="item.image"
-            :nuxt-img-config="item.imageConfig"
-            :class="item.class"
-          />
-        </template>
-      </SfBannerGrid>
-    </LazyHydrate>
+   
     <LoadWhenVisible>
       <NewProducts
         class="products"
         :button-text="$t('See more')"
         :title="$t('New Products')"
-        link="/c/women.html"
+        link="/c/books.html"
       />
     </LoadWhenVisible>
-    <LoadWhenVisible>
-      <CallToAction
-        :title="callToAction.title"
-        :button-text="callToAction.buttonText"
-        :description="callToAction.description"
-        image-tag="nuxt-img"
-        :image-src="callToAction.imageSrc"
-        :image-width="callToAction.imageWidth"
-        :image-height="callToAction.imageHeight"
-        :nuxt-img-config="callToAction.imageConfig"
-        class="call-to-action"
-      />
-    </LoadWhenVisible>
-    <LoadWhenVisible>
-      <InstagramFeed />
-    </LoadWhenVisible>
-    <LoadWhenVisible>
-      <MobileStoreBanner />
-    </LoadWhenVisible>
+    
   </div>
 </template>
 <script lang="ts" type="module">
@@ -97,17 +58,13 @@ export default defineComponent({
     const year = new Date().getFullYear();
     const { isDesktop } = app.$device;
     const hero = ref({
-      title: app.i18n.t('Colorful summer dresses are already in store'),
-      subtitle: app.i18n.t('SUMMER COLLECTION {year}', { year }),
+      title: app.i18n.t('New E-books is available now!'),
+      subtitle: app.i18n.t(''),
       buttonText: app.i18n.t('Learn more'),
-      imageSrc: '/homepage/bannerB',
+      imageSrc: '/homepage/HomeBook.webp',
       imageWidth: isDesktop ? 1240 : 328,
       imageHeight: isDesktop ? 400 : 224,
-      imageConfig: {
-        fit: 'cover',
-        format: 'webp',
-      },
-      link: '/c/what-is-new.html',
+      link: '/c/e-books.html',
     });
     const banners = ref([
       {
