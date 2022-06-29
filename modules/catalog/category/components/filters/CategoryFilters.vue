@@ -54,7 +54,7 @@
       </div>
       <div class="filters__buttons">
         <SfButton
-          class="sf-button--full-width"
+          class="sf-button--full-width color-secondary"
           data-testid="apply-filters"
           @click="doApplyFilters"
         >

@@ -30,6 +30,8 @@
           class="hero__title"
         >
           {{ title }}
+          <br/>
+           Save up to 30% costs by reading E-books 
         </span>
       </slot>
       <slot
@@ -39,7 +41,7 @@
         <SfButton
           v-if="buttonText && link"
           :link="localePath(link)"
-          class="hero__button"
+          class="hero__button color-secondary"
         >
           {{ buttonText }}
         </SfButton>
@@ -137,7 +139,7 @@ export default defineComponent({
 
   &__title {
     margin: var(--spacer-xs) 0 0 0;
-    color: var(--c-text);
+    color: black;
     width: 60%;
     @include font(
         --hero-title-font,
