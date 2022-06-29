@@ -6,6 +6,9 @@
     >
       <template #logo>
         <HeaderLogo />
+          <div class="sf-heading">
+           <p class="sf-heading__title ">Libbook</p>
+          </div>
       </template>
       <template #navigation>
         <HeaderNavigation :category-tree="categoryTree" />
