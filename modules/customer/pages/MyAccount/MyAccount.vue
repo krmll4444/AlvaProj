@@ -104,7 +104,8 @@ export default defineComponent({
 
 ::v-deep {
   .nuxt-link-exact-active > .sf-menu-item__label {
-    color: var(--c-primary);
+    color: gray !important;
+    font-weight: 600;
   }
 }
 

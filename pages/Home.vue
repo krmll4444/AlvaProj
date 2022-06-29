@@ -107,7 +107,7 @@ export default defineComponent({
         fit: 'cover',
         format: 'webp',
       },
-      link: '/c/women.html',
+      link: '/c/what-is-new.html',
     });
     const banners = ref([
       {

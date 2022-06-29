@@ -8,7 +8,7 @@
     <h1 v-else>
       {{ $t('An error occurred') }}
     </h1>
-    <SfButton :link="localePath('/')">
+    <SfButton :link="localePath('/')" class="color-secondary">
       {{ $t('Back to Home page') }}
     </SfButton>
   </div>

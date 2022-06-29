@@ -15,7 +15,11 @@
           />
         </div>
         <SfButton
+<<<<<<< HEAD
           class="form__button color-light"
+=======
+          class="form__button color-secondary"
+>>>>>>> ff9cbd367d2eba5c7852f771179dcdc8f9d8c55b
           type="submit"
           @click="saveForm"
         >
@@ -134,4 +138,16 @@ export default defineComponent({
   }
 }
 
+.sf-checkbox.is-active {
+    --checkbox-border-color: black;
+    --checkbox-background: black;
+}
+
+.notice__link{
+  color:rgb(70, 70, 70);
+}
+.notice__link:hover{
+  color:black;
+  text-decoration: underline;
+}
 </style>

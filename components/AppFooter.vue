@@ -112,4 +112,5 @@ export default defineComponent({
     }
   }
 }
+.sf-menu-item:hover{--menu-item-label-color:rgb(169, 169, 169) !important}
 </style>
