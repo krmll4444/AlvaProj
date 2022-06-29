@@ -5,7 +5,7 @@
         <h2 class="sf-heading__title title">
           {{ title }}
         </h2>
-        <SfButton :link="localePath(link)">
+        <SfButton :link="localePath(link)" class="color-secondary ">
           {{ buttonText }}
         </SfButton>
       </div>
