@@ -65,7 +65,7 @@
           <SfButton
             v-e2e="'reset-password-modal-submit'"
             type="submit"
-            class="sf-button--full-width form__button"
+            class="sf-button--full-width form__button color-secondary"
             :disabled="forgotPasswordLoading"
           >
             <SfLoader
@@ -81,7 +81,7 @@
     <div v-else>
       <p>{{ $t('Password Changed') }}</p>
       <SfButton
-        class="sf-button"
+        class="sf-button color-secondary"
         link="/"
       >
         {{ $t('Back to home') }}

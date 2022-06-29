@@ -20,7 +20,7 @@
           </p>
           <SfButton
             data-cy="order-history-btn_start"
-            class="no-orders__button"
+            class="no-orders__button color-secondary"
             @click="$router.push(localePath('/'))"
           >
             {{ $t('Start shopping') }}

@@ -86,7 +86,7 @@
           </div>
         </transition-group>
         <SfButton
-          class="action-button"
+          class="action-button color-secondary"
           @click="goToCreateAddressPage()"
         >
           {{ $t('Add new address') }}

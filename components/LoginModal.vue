@@ -63,7 +63,7 @@
             <SfButton
               v-e2e="'login-modal-submit'"
               type="submit"
-              class="sf-button--full-width form__button"
+              class="sf-button--full-width form__button color-secondary"
               :disabled="loading"
             >
               <SfLoader
@@ -126,7 +126,7 @@
             <SfButton
               v-e2e="'forgot-modal-submit'"
               type="submit"
-              class="sf-button--full-width form__button"
+              class="sf-button--full-width form__button color-secondary"
               :disabled="forgotPasswordLoading"
             >
               <SfLoader
@@ -253,7 +253,7 @@
             <SfButton
               v-e2e="'login-modal-submit'"
               type="submit"
-              class="sf-button--full-width form__button"
+              class="sf-button--full-width form__button color-secondary"
               :disabled="loading || !createAccount || invalid"
             >
               <SfLoader
@@ -563,7 +563,7 @@ export default defineComponent({
   font-family: var(--font-family--secondary);
 
   &__paragraph {
-    color: var(--c-primary);
+    color: black;
     margin: 0 0 var(--spacer-base) 0;
     @include for-desktop {
       margin: 0;
@@ -576,5 +576,13 @@ export default defineComponent({
       font-weight: var(--font-weight--semibold);
     }
   }
+}
+.sf-button--text:hover {
+    --button-background: transparent;
+    --button-color: var(--_c-gray-secondary-lighten);
+}
+.sf-checkbox.is-active {
+    --checkbox-border-color: black;// var(--_c-gray-primary);
+    --checkbox-background: black;//var(--_c-gray-primary);
 }
 </style>

@@ -239,7 +239,7 @@
       </div>
       <SfButton
         v-if="!sameAsShipping && !canAddNewAddress"
-        class="color-light form__action-button form__action-button--add-address"
+        class="color-light form__action-button form__action-button--add-address color-secondary"
         type="submit"
         @click="handleAddNewAddressBtnClick"
       >
