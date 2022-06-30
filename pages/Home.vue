@@ -61,7 +61,7 @@ export default defineComponent({
       title: app.i18n.t('New E-books is available now!'),
       subtitle: app.i18n.t(''),
       buttonText: app.i18n.t('Learn more'),
-      imageSrc: '/homepage/HomeBook.webp',
+      imageSrc: '/homepage/bannerAC.webp',
       imageWidth: isDesktop ? 1240 : 328,
       imageHeight: isDesktop ? 400 : 224,
       link: '/c/e-books.html',
@@ -166,7 +166,7 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 .article-meta h4 a {
-  color: #111111;
+  color: #ffffff;
   font-weight: 600;
   font-size: 20px;
 }
@@ -182,7 +182,7 @@ export default defineComponent({
   height: 5px;
   margin: -1px 10px 0 10px;
   border-radius: 100%;
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(175, 175, 175, 0.4);
   vertical-align: middle;
 }
 
