@@ -19,7 +19,7 @@
     </template>
     <template v-else>
       <SfProductCard
-        v-for="product in productsWithCommonProductCardProps"
+        v-for="product in listProductsInStock"
         :key="product.uid"
         v-bind="product.commonProps"
         class="card"
@@ -34,9 +34,31 @@
           <CategoryProductPrice :product="product" />
         </template>
       </SfProductCard>
+      
+
+      <SfProductCard
+        v-for="product in listProductsOutOfStock"
+        :key="product.uid"
+        v-bind="product.commonProps"
+        class="card out"
+        data-testid="product-card"
+        :image-height="imageSize.height"
+        :image-width="imageSize.width"
+        show-add-to-cart-button
+        :showAddToCartButton="false"
+        @click:wishlist="$emit('click:wishlist', product)"
+        @click:add-to-cart="$emit('click:add-to-cart', { product, quantity: 1 })"
+      >
+        <template #price>
+          <CategoryProductPrice :product="product" />
+        </template>
+      </SfProductCard>
     </template>
   </transition-group>
+
+
 </template>
+
 
 <script lang="ts">
 import { defineComponent, PropType, toRefs } from '@nuxtjs/composition-api';
@@ -67,12 +89,19 @@ export default defineComponent({
     const { imageSizes: { productCard: imageSize } } = useImage();
     const { products } = toRefs(props);
     const { productsWithCommonProductCardProps } = useProductsWithCommonProductCardProps(products);
-
     return {
       imageSize,
       productsWithCommonProductCardProps,
     };
   },
+  computed:{
+    listProductsInStock(){
+      return this.productsWithCommonProductCardProps.filter(el => el.stock_status=='IN_STOCK')
+    },
+    listProductsOutOfStock(){
+      return this.productsWithCommonProductCardProps.filter(el => el.stock_status=='OUT_OF_STOCK')
+    }
+  }
 });
 </script>
 
@@ -105,7 +134,11 @@ export default defineComponent({
 }
 
 .sf-circle-icon{
-  --button-background: gray !important;
+  --button-background: black !important;
   --button-box-shadow: 0 0 0 0.3125rem gray !important;
+}
+
+.out{
+  opacity: 0.3;
 }
 </style>

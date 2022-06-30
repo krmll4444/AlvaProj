@@ -80,10 +80,11 @@
         <SfAddToCart
           v-model="qty"
           v-e2e="'product_add-to-cart'"
-          :disabled="isCartLoading || !canAddToCart(product, qty) || isFetching"
+          :disabled="outOfStock || isCartLoading || !canAddToCart(product, qty) || isFetching"
           class="product__add-to-cart"
           @click="addItem({ product, quantity: parseInt(qty) })"
         />
+        <div v-if="outOfStock" class="OutStock">Out of stock</div>
         <div class="product__additional-actions color-light">
           <AddToWishlist
             :is-in-wishlist="isInWishlist"
@@ -186,7 +187,7 @@ export default defineComponent({
     const productSpecialPrice = computed(() => getProductPrice(props.product).special);
     const totalReviews = computed(() => getTotalReviews(props.product));
     const averageRating = computed(() => getAverageRating(props.product));
-
+    const outOfStock = computed(()=> props.product.stock_status=='OUT_OF_STOCK')
     return {
       addItem,
       addItemToWishlist: addOrRemoveItem,
@@ -207,10 +208,18 @@ export default defineComponent({
       openNewReviewTab,
       activeTab,
       TabsConfig,
+      outOfStock
     };
   },
 });
 </script>
 <style lang="scss" scoped>
 @import '../styles.scss';
+.OutStock{
+    text-align: right;
+    padding-top: 20px;
+    font-weight: 700;
+    margin-right: 5%;
+    font-size: 22px;
+}
 </style>
