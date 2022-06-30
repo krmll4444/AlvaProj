@@ -41,7 +41,7 @@
         <SfButton
           v-if="buttonText && link"
           :link="localePath(link)"
-          class="hero__button color-secondary"
+          class="hero__button color-light"
         >
           {{ buttonText }}
         </SfButton>
@@ -139,7 +139,7 @@ export default defineComponent({
 
   &__title {
     margin: var(--spacer-xs) 0 0 0;
-    color: black;
+    color: rgb(255, 255, 255);
     width: 60%;
     @include font(
         --hero-title-font,
