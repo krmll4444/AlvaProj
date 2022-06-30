@@ -82,14 +82,15 @@
           v-e2e="'product_add-to-cart'"
           :disabled="outOfStock || isCartLoading || !canAddToCart(product, qty) || isFetching"
           class="product__add-to-cart"
-          @click="addItem({ product, quantity: parseInt(qty) })"
+          @click="toggleAndAddToList({ product, quantity: parseInt(qty) })"
+
         />
         <div v-if="outOfStock" class="OutStock">Out of stock</div>
         <div class="product__additional-actions color-light">
           <AddToWishlist
             :is-in-wishlist="isInWishlist"
             :is-show="isAuthenticated"
-            @addToWishlist="addItemToWishlist({product})"
+            @addToWishlist="toggleAndAddToWishList({product})"
           />
         </div>
       </div>
@@ -131,7 +132,7 @@ import {
   getTotalReviews,
   getAverageRating,
 } from '~/getters/reviewGetters';
-
+import {useUiState} from '~/composables';
 import useWishlist from '~/modules/wishlist/composables/useWishlist';
 import SvgImage from '~/components/General/SvgImage.vue';
 import HTMLContent from '~/components/HTMLContent.vue';
@@ -142,6 +143,7 @@ import { useCart } from '~/modules/checkout/composables/useCart';
 import ProductTabs from '~/modules/catalog/product/components/tabs/ProductTabs.vue';
 import { useProductGallery } from '~/modules/catalog/product/composables/useProductGallery';
 import { TabsConfig, useProductTabs } from '~/modules/catalog/product/composables/useProductTabs';
+
 
 export default defineComponent({
   name: 'SimpleProduct',
@@ -178,11 +180,12 @@ export default defineComponent({
     const { isAuthenticated } = useUser();
     const { addOrRemoveItem, isInWishlist } = useWishlist();
     const { activeTab, setActiveTab, openNewReviewTab } = useProductTabs();
+    const { toggleCartSidebar, toggleWishlistSidebar, toggleLoginModal } = useUiState();
 
     const productShortDescription = computed(
       () => props.product?.short_description?.html || '',
     );
-
+    
     const productPrice = computed(() => getProductPrice(props.product).regular);
     const productSpecialPrice = computed(() => getProductPrice(props.product).special);
     const totalReviews = computed(() => getTotalReviews(props.product));
@@ -208,8 +211,23 @@ export default defineComponent({
       openNewReviewTab,
       activeTab,
       TabsConfig,
-      outOfStock
+      outOfStock,
+      toggleCartSidebar,
+      toggleWishlistSidebar
     };
+  },
+  methods: {
+   async toggleAndAddToList(data) {
+      this.toggleCartSidebar()
+      this.addItem(data)
+      setTimeout(() => this.toggleCartSidebar(), 3000)
+    },
+    toggleAndAddToWishList(data){
+      this.toggleWishlistSidebar()
+      this.addItemToWishlist(data)
+      setTimeout(() => this.toggleWishlistSidebar(), 3000)
+    }
+    
   },
 });
 </script>
