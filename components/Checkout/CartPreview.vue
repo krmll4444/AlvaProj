@@ -37,7 +37,6 @@
         class="sf-property--full-width sf-property--large property-total"
       />
     </div>
-    <CouponCode class="highlighted" />
     <div class="highlighted">
       <SfCharacteristic
         v-for="characteristic in characteristics"
@@ -51,33 +50,33 @@
   </div>
 </template>
 <script lang="ts">
-import { SfHeading, SfProperty, SfCharacteristic } from '@storefront-ui/vue';
-import { computed, ref, defineComponent } from '@nuxtjs/composition-api';
-import cartGetters from '~/modules/checkout/getters/cartGetters';
-import useCart from '~/modules/checkout/composables/useCart';
-import getShippingMethodPrice from '~/helpers/checkout/getShippingMethodPrice';
-import CouponCode from '../CouponCode.vue';
+import { SfHeading, SfProperty, SfCharacteristic } from "@storefront-ui/vue";
+import { computed, ref, defineComponent } from "@nuxtjs/composition-api";
+import cartGetters from "~/modules/checkout/getters/cartGetters";
+import useCart from "~/modules/checkout/composables/useCart";
+import getShippingMethodPrice from "~/helpers/checkout/getShippingMethodPrice";
+import CouponCode from "../CouponCode.vue";
 
 const CHARACTERISTICS = [
   {
-    title: 'Safety',
-    description: 'It carefully packaged with a personal touch',
-    icon: 'safety',
+    title: "Safety",
+    description: "It carefully packaged with a personal touch",
+    icon: "safety",
   },
   {
-    title: 'Easy shipping',
-    description: 'You’ll receive dispatch confirmation and an arrival date',
-    icon: 'shipping',
+    title: "Easy shipping",
+    description: "You’ll receive dispatch confirmation and an arrival date",
+    icon: "shipping",
   },
   {
-    title: 'Changed your mind?',
-    description: 'Rest assured, we offer free returns within 30 days',
-    icon: 'return',
+    title: "Changed your mind?",
+    description: "Rest assured, we offer free returns within 30 days",
+    icon: "return",
   },
 ];
 
 export default defineComponent({
-  name: 'CartPreview',
+  name: "CartPreview",
   components: {
     SfHeading,
     SfProperty,
@@ -94,7 +93,9 @@ export default defineComponent({
     const totals = computed(() => cartGetters.getTotals(cart.value));
     const discount = computed(() => -cartGetters.getDiscountAmount(cart.value));
     const hasDiscounts = computed(() => Math.abs(discount.value) > 0);
-    const selectedShippingMethod = computed(() => cartGetters.getSelectedShippingMethod(cart.value));
+    const selectedShippingMethod = computed(() =>
+      cartGetters.getSelectedShippingMethod(cart.value)
+    );
 
     return {
       cart,
